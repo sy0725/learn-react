@@ -1,5 +1,5 @@
-import HeaderBar from "./HeaderBar";
 import FooterBar from "./FooterBar";
+import HeaderBar from "./HeaderBar";
 
 function RootLayout(props) {
   return (
