@@ -1,18 +1,14 @@
-import HeaderBar from './HeaderBar';
-import FooterBar from './FooterBar';
+import HeaderBar from "./HeaderBar";
+import FooterBar from "./FooterBar";
 
-
-function RootLayout(props){
-    return (
-        <div>
-            <HeaderBar />
-            <main>
-                {props.children}
-            </main>
-            <FooterBar />
-        </div>
-    )
+function RootLayout(props) {
+  return (
+    <>
+      <HeaderBar />
+      <main>{props.children}</main>
+      <FooterBar />
+    </>
+  );
 }
 
-
-export default RootLayout
+export default RootLayout;

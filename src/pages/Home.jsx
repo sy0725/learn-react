@@ -1,17 +1,9 @@
-import Logo from "../components/Logo";
-
-
-function Home(){
-    return (
-        <div>
-            <h2>홈 페이지</h2>
-
-            <Logo/>
-
-
-        </div>
-    )
+function Home() {
+  return (
+    <div>
+      <h2>홈 페이지</h2>
+    </div>
+  );
 }
-
 
 export default Home;
