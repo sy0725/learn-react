@@ -16,6 +16,7 @@ import viteImagePath from "@/assets/vite.svg";
 // - isLoading (로딩 중)
 // - isSuccess (데이터 요청/응답 성공 수신)
 // - isError (데이터 요청 실패)
+
 const status = "isSuccess";
 
 /* 컴포넌트 --------------------------------------------------------------------- */
@@ -87,12 +88,12 @@ function ConditionalRendering({ hidden, imageType }) {
           {/* <img src="/react.avif" alt="리액트" /> */}
           {/* <img src="/vite.svg" alt="비트" /> */}
 
-          {isShowImage && (
+          {/* {isShowImage && (
             <img
               src={isReactImage ? "/react.avif" : "/vite.svg"}
               alt={isReactImage ? "리액트" : "비트"}
             />
-          )}
+          )} */}
 
           {/* imageType이 'vite'인 경우 'Vite', 'react'인 경우 'React' 텍스트를 화면에 표시합니다. */}
           {/* { isReactImage ? 'React' : 'Vite' } */}
