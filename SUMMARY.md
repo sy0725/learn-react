@@ -1,3 +1,12 @@
+8. 16
+   Tailwind CSS 설치 및 구성(with 플러그인) 실습을 진행하였습니다.
+   데이터 유형(number, string, boolean, array, object) 별 React 상태 관리 방법을 실습하였습니다.
+   용도에 따라 폼 입력 필드의 value, defaultValue, readOnly, onChange 설정 방법을 다뤘습니다.
+   상태(state)와 파생된 상태(derived state)를 사용해 사용자 인터페이스를 구성하고 사용자와 상호작용합니다.
+   쌍(pair)으로 관리될 필요가 있는 상태는 그룹(group)으로 관리하는 것이 좋습니다.
+   복잡한 데이터인 객체 또는 배열을 상태로서 관리할 때는 합성 방식을 사용해야 합니다.
+   배열 데이터를 관리할 때 배열(집합)과 선택된 상태(단수) 2가지 상태로 UI를 구현할 수 있습니다.
+
 # 컴포넌트 상태 관리 요약
 
 1. JavaScript 로컬 변수를 사용하면 React 컴포넌트 상태 관리가 가능하지 않습니다.
