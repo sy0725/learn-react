@@ -54,7 +54,9 @@ function LearnStateAndEffects() {
 
   return (
     <div className="m-10 flex flex-col gap-2 items-start">
-      <h2 className={`text-indigo-600 text-2xl ${fontWeight} uppercase`}>
+      <h2
+        className={`text-indigo-600 font-suit text-2xl ${fontWeight} uppercase`}
+      >
         상태 및 이펙트 학습하기
       </h2>
 
@@ -72,7 +74,7 @@ function LearnStateAndEffects() {
               type="button"
               onClick={() => handleChangeFontWeight(index)}
               className={`
-                  py-0.5 px-1.5 bg-stone-100 text-stone-600 rounded-full
+                  py-0.5 px-1.5 bg-stone-100 rounded-full
                   ${isActive ? "bg-stone-950 text-stone-50" : ""}
                   hover:bg-stone-800
                   hover:text-stone-100
