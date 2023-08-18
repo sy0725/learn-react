@@ -1,10 +1,9 @@
-
 function Contact() {
-    return (
-        <h2>컨텍트</h2>
-    )
+  return (
+    <div>
+      <h1 className="text-emerald-500">Contact</h1>
+    </div>
+  );
 }
 
-
-
-export default Contact
+export default Contact;

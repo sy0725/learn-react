@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div>
-      <h2>홈 페이지</h2>
+      <h2 className="text-emerald-500">Home</h2>
     </div>
   );
 }

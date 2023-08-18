@@ -1,14 +1,10 @@
-import RootLayout from "./layout/RootLayout";
-import LearnStateAndEffects from "./pages/LearnStateAndEffects";
-import ProductList from "./pages/ProductList";
+import { RouterProvider } from 'react-router-dom';
+import router from './routes';
 
 function App() {
   return (
     <div className="App">
-      <RootLayout>
-        <LearnStateAndEffects />
-        <ProductList />
-      </RootLayout>
+      <RouterProvider router={router} />
     </div>
   );
 }

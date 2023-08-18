@@ -1,11 +1,11 @@
-import styles from "./Switcher.module.css";
+import styles from './Switcher.module.css';
 
 function Switcher({
   on = false,
-  onText = "",
-  offText = "",
-  label = "",
-  size = "sm", // sm, md, lg
+  onText = '',
+  offText = '',
+  label = '',
+  size = 'sm', // sm, md, lg
   ...restProps
 }) {
   return (
@@ -13,7 +13,7 @@ function Switcher({
       <button
         type="button"
         className={`${styles.Switcher} ${styles[size]} ${
-          on ? styles.on : ""
+          on ? styles.on : ''
         }`.trim()}
         {...restProps}
       >

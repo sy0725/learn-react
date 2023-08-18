@@ -1,4 +1,4 @@
-export function currency(price, symbol = "$") {
+export function currency(price, symbol = '$') {
   return `${symbol}${price}`;
 }
 

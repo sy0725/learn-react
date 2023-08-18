@@ -1,7 +1,7 @@
 function Spinner({
   size = 200,
-  message = "로딩 중...",
-  colors = ["#93dbe9", "#689cc5", "#5e6fa3"],
+  message = '로딩 중...',
+  colors = ['#93dbe9', '#689cc5', '#5e6fa3'],
   ...restProps
 }) {
   return (
