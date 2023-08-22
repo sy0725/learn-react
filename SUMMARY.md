@@ -1,31 +1,38 @@
-8. 17
-사이드 이펙트를 관리하는 이벤트 핸들러 및 useEffect 훅의 콜백 함수를 실습하고 요약 정리합니다.
-이펙트 콜백 함수 (effect callback function)
-이펙트 콜백 함수 실행 조건 설정 (dependencies)
-이펙트 클린업 함수 (cleanup)
-서버 데이터 요청/응답
-데이터 가져오기(fetch Data)
-Fetch API 활용
-useEffect 훅을 사용해 데이터 가져오기 상태 설정
-대기(pending)
-로딩(loading)
-성공(success)
-실패(error)
-Async 함수를 사용하는 방법
-PocketBase 백엔드 데이터베이스 솔루션
-다운로드 및 서버 구동
-콜렉션, 레코드, 필드 개념 이해
-콜렉션 생성, 필드 추가
-API 규칙 설정 (접근 권한)
+8. 21
+   이미지는 크게 정적(public 폴더), 동적(src 안에 있는 assets 폴더)으로 처리합니다.
+   동적 이미지의 경우는 반드시 import 구문으로 이미지 경로를 불러와야 합니다.
+   정적 이미지의 경우 배포하기 전에는 /로 사용합니다.
+   리액트 라우터를 사용하면 루트 파라미터(route parameters)를 사용해 동적 라우팅(dynamic routing)할 수 있습니다.
+   동적 라우팅 사용 시, 루트 파라미터는 콜론(:)을 사용해 표기합니다.
 
-8. 16
-   Tailwind CSS 설치 및 구성(with 플러그인) 실습을 진행하였습니다.
-   데이터 유형(number, string, boolean, array, object) 별 React 상태 관리 방법을 실습하였습니다.
-   용도에 따라 폼 입력 필드의 value, defaultValue, readOnly, onChange 설정 방법을 다뤘습니다.
-   상태(state)와 파생된 상태(derived state)를 사용해 사용자 인터페이스를 구성하고 사용자와 상호작용합니다.
-   쌍(pair)으로 관리될 필요가 있는 상태는 그룹(group)으로 관리하는 것이 좋습니다.
-   복잡한 데이터인 객체 또는 배열을 상태로서 관리할 때는 합성 방식을 사용해야 합니다.
-   배열 데이터를 관리할 때 배열(집합)과 선택된 상태(단수) 2가지 상태로 UI를 구현할 수 있습니다.
+9. 17
+   사이드 이펙트를 관리하는 이벤트 핸들러 및 useEffect 훅의 콜백 함수를 실습하고 요약 정리합니다.
+   이펙트 콜백 함수 (effect callback function)
+   이펙트 콜백 함수 실행 조건 설정 (dependencies)
+   이펙트 클린업 함수 (cleanup)
+   서버 데이터 요청/응답
+   데이터 가져오기(fetch Data)
+   Fetch API 활용
+   useEffect 훅을 사용해 데이터 가져오기 상태 설정
+   대기(pending)
+   로딩(loading)
+   성공(success)
+   실패(error)
+   Async 함수를 사용하는 방법
+   PocketBase 백엔드 데이터베이스 솔루션
+   다운로드 및 서버 구동
+   콜렉션, 레코드, 필드 개념 이해
+   콜렉션 생성, 필드 추가
+   API 규칙 설정 (접근 권한)
+
+10. 16
+    Tailwind CSS 설치 및 구성(with 플러그인) 실습을 진행하였습니다.
+    데이터 유형(number, string, boolean, array, object) 별 React 상태 관리 방법을 실습하였습니다.
+    용도에 따라 폼 입력 필드의 value, defaultValue, readOnly, onChange 설정 방법을 다뤘습니다.
+    상태(state)와 파생된 상태(derived state)를 사용해 사용자 인터페이스를 구성하고 사용자와 상호작용합니다.
+    쌍(pair)으로 관리될 필요가 있는 상태는 그룹(group)으로 관리하는 것이 좋습니다.
+    복잡한 데이터인 객체 또는 배열을 상태로서 관리할 때는 합성 방식을 사용해야 합니다.
+    배열 데이터를 관리할 때 배열(집합)과 선택된 상태(단수) 2가지 상태로 UI를 구현할 수 있습니다.
 
 # 컴포넌트 상태 관리 요약
 

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
@@ -6,16 +6,20 @@ function Nav() {
       <ul className="flex gap-4 p-5 font-extralight">
         <li>
           <NavLink
-            to="/"
-            className={({ isActive }) => isActive ? 'font-semibold text-rose-600' : ''}
+            to="/signin"
+            className={({ isActive }) =>
+              isActive ? "font-semibold text-rose-600" : ""
+            }
           >
-            Home
+            Sign In
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/products"
-            className={({ isActive }) => isActive ? 'font-semibold text-rose-600' : ''}
+            className={({ isActive }) =>
+              isActive ? "font-semibold text-rose-600" : ""
+            }
           >
             Products
           </NavLink>
@@ -23,7 +27,9 @@ function Nav() {
         <li>
           <NavLink
             to="/contact"
-            className={({ isActive }) => isActive ? 'font-semibold text-rose-600' : ''}
+            className={({ isActive }) =>
+              isActive ? "font-semibold text-rose-600" : ""
+            }
           >
             Contact
           </NavLink>
