@@ -1,11 +1,13 @@
-import { getPbImageURL, numberWithComma } from '@/utils';
+import { ProductType } from "@/@types/global.d";
+import { getPbImageURL, numberWithComma } from "@/utils";
+import { shape, string, number } from "prop-types";
 
 export default function ProductItem({ item }) {
   return (
     <li>
       <figure className="flex flex-col items-start">
         <img
-          src={getPbImageURL(item, 'photo')}
+          src={getPbImageURL(item, "photo")}
           className="h-96 w-auto"
           alt=""
         />
@@ -19,3 +21,7 @@ export default function ProductItem({ item }) {
     </li>
   );
 }
+
+ProductItem.propTypes = {
+  item: ProductType.isRequired,
+};

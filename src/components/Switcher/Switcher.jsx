@@ -1,11 +1,12 @@
-import styles from './Switcher.module.css';
+import styles from "./Switcher.module.css";
+import { bool, string, oneOf } from "prop-types";
 
 function Switcher({
   on = false,
-  onText = '',
-  offText = '',
-  label = '',
-  size = 'sm', // sm, md, lg
+  onText = "",
+  offText = "",
+  label = "",
+  size = "sm", // sm, md, lg
   ...restProps
 }) {
   return (
@@ -13,7 +14,7 @@ function Switcher({
       <button
         type="button"
         className={`${styles.Switcher} ${styles[size]} ${
-          on ? styles.on : ''
+          on ? styles.on : ""
         }`.trim()}
         {...restProps}
       >
@@ -24,6 +25,12 @@ function Switcher({
   );
 }
 
-<Switcher />;
+Switcher.propTypes = {
+  on: bool,
+  onText: string,
+  offText: string,
+  label: string,
+  size: oneOf(["sm", "md", "lg"]),
+};
 
 export default Switcher;
