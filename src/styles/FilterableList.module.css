@@ -7,7 +7,11 @@
   color: var(--primary-color);
 
   &::placeholder {
-    color: color-mix(in srgb, var(--primary-color) 80%, var(--white-color) 100%);
+    color: color-mix(
+      in srgb,
+      var(--primary-color) 80%,
+      var(--white-color) 100%
+    );
   }
 }
 

@@ -1,8 +1,12 @@
 import { useLayoutEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 
 function RefExampleReferencingDOM() {
   return (
     <>
+      <Helmet>
+        <title>React Refs. referencing DOM - Learn</title>
+      </Helmet>
       <h2>컴포넌트 내부의 DOM 요소를 직접 참조하는 Refs</h2>
       <p className="mb-4">원에 클릭한 후, 애니메이션을 재생/정지해보세요.</p>
       <Circle />

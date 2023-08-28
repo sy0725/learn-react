@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { string, number, bool, arrayOf, shape } from "prop-types";
 import { numberWithComma } from "@/utils";
+import { Helmet } from "react-helmet-async";
 
 function ComponentPropTypes() {
-  const [screencast, setScreencast] = useState({
+  const [screencast] = useState({
     id: "kciskdfkijc",
     title: "화면 공유",
     // tags: ['zoom', 'screen share', 'online lecture'],
@@ -31,7 +32,10 @@ function ComponentPropTypes() {
   const { id, title, tags, isOnline, price } = screencast;
 
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Prop Types Validation - Learn</title>
+      </Helmet>
       <h2>ComponentPropTypes</h2>
       <ScreenCast
         id={id}
@@ -41,7 +45,7 @@ function ComponentPropTypes() {
         price={price}
         // {...screencast}
       />
-    </div>
+    </>
   );
 }
 

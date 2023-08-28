@@ -1,9 +1,13 @@
 import { gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 
 function GSAP_Animation() {
   return (
     <>
+      <Helmet>
+        <title>GSAP Animation - Learn</title>
+      </Helmet>
       <h2>컴포넌트 내부의 DOM 요소를 직접 참조하는 Refs</h2>
       <p className="mb-10">원에 마우스를 올려보세요.</p>
 
