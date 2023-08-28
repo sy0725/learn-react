@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { DemoAppContext } from "../11-context-problem";
 import { shape, string } from "prop-types";
+import { useListStore } from "@/store/list";
 
 function ListItem({ item }) {
   const { list, count } = useContext(DemoAppContext);
+
+  const listStoreList = useListStore((state) => state.list);
 
   const handleDeleteItem = (id) => () => {
     list.deleteItem(id);
