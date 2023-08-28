@@ -1,15 +1,15 @@
-import pb from '@/api/pocketbase';
-import { getPbImageURL } from '@/utils';
-import { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { toast } from 'react-hot-toast';
-import { useNavigate, useParams } from 'react-router-dom';
+import pb from "@/api/pocketbase";
+import { getPbImageURL } from "@/utils";
+import { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { toast } from "react-hot-toast";
+import { useNavigate, useParams } from "react-router-dom";
 
 const resetData = {
-  title: '',
-  color: '',
-  price: '',
-  photo: '',
+  title: "",
+  color: "",
+  price: "",
+  photo: "",
 };
 
 function ProductEdit() {
@@ -25,18 +25,20 @@ function ProductEdit() {
   useEffect(() => {
     async function getProduct() {
       try {
-        const product = await pb.collection('products').getOne(productId);
+        const product = await pb.collection("products").getOne(productId);
         const { title, color, price } = product;
         resetData.title = titleRef.current.value = title;
         resetData.color = colorRef.current.value = color;
         resetData.price = priceRef.current.value = price.toString();
-        const photoUrl = (resetData.photo = getPbImageURL(product, 'photo'));
+        const photoUrl = (resetData.photo = getPbImageURL(product, "photo"));
         setFileImages((fileImages) => [
           ...fileImages,
           { image: photoUrl, label: photoUrl },
         ]);
       } catch (error) {
-        console.error(error);
+        if (!(error in DOMException)) {
+          console.error();
+        }
       }
     }
 
@@ -52,11 +54,11 @@ function ProductEdit() {
     const photoValue = photoRef.current.files;
 
     if (!titleValue && !colorValue && !priceValue) {
-      toast('이름, 색상, 가격 정보 입력이 필요합니다.', {
-        icon: '🚨',
+      toast("이름, 색상, 가격 정보 입력이 필요합니다.", {
+        icon: "🚨",
         ariaProps: {
-          role: 'status',
-          'aria-live': 'polite',
+          role: "status",
+          "aria-live": "polite",
         },
       });
 
@@ -65,19 +67,17 @@ function ProductEdit() {
 
     const formData = new FormData();
 
-    formData.append('title', titleValue);
-    formData.append('color', colorValue);
-    formData.append('price', priceValue);
-
-    console.log(photoValue);
+    formData.append("title", titleValue);
+    formData.append("color", colorValue);
+    formData.append("price", priceValue);
 
     if (photoValue.length > 0) {
-      formData.append('photo', photoValue[0]);
+      formData.append("photo", photoValue[0]);
     }
 
     try {
-      await pb.collection('products').update(productId, formData);
-      navigate('/products');
+      await pb.collection("products").update(productId, formData);
+      navigate("/products");
     } catch (error) {
       console.error(error);
     }
@@ -108,7 +108,7 @@ function ProductEdit() {
         <title>
           {titleRef.current
             ? `${titleRef.current.value}(${colorRef.current.value}) - ReactBird`
-            : 'Loading... - ReactBird'}
+            : "Loading... - ReactBird"}
         </title>
       </Helmet>
       <div className="container max-w-lg mx-auto">

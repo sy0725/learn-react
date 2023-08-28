@@ -1,9 +1,9 @@
-import pb from '@/api/pocketbase';
-import { useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-import S from './ProductNew.module.css';
+import pb from "@/api/pocketbase";
+import { useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import S from "./ProductNew.module.css";
 
 function ProductNew() {
   const navigate = useNavigate();
@@ -23,11 +23,11 @@ function ProductNew() {
     const photoValue = photoRef.current.files;
 
     if (!titleValue && !colorValue && !priceValue) {
-      toast('이름, 색상, 가격 정보 입력이 필요합니다.', {
-        icon: '🚨',
+      toast("이름, 색상, 가격 정보 입력이 필요합니다.", {
+        icon: "🚨",
         ariaProps: {
-          role: 'status',
-          'aria-live': 'polite',
+          role: "status",
+          "aria-live": "polite",
         },
       });
 
@@ -36,26 +36,26 @@ function ProductNew() {
 
     const formData = new FormData();
 
-    formData.append('title', titleValue);
-    formData.append('color', colorValue);
-    formData.append('price', priceValue);
+    formData.append("title", titleValue);
+    formData.append("color", colorValue);
+    formData.append("price", priceValue);
     if (photoValue) {
-      formData.append('photo', photoValue[0]);
+      formData.append("photo", photoValue[0]);
     }
 
     try {
-      await pb.collection('products').create(formData);
-      navigate('/products');
+      await pb.collection("products").create(formData);
+      navigate("/products");
     } catch (error) {
       console.error(error);
     }
   };
 
   const handleReset = () => {
-    titleRef.current.value = '';
-    colorRef.current.value = '';
-    priceRef.current.value = '';
-    photoRef.current.value = '';
+    titleRef.current.value = "";
+    colorRef.current.value = "";
+    priceRef.current.value = "";
+    photoRef.current.value = "";
     setFileImages([]);
   };
 
@@ -92,10 +92,7 @@ function ProductNew() {
               name="title"
               id="title"
               placeholder="Slim Fit Ribbed Sleeveless"
-              className="
-              border border-zinc-300 py-1.5 px-4 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2
-              dark:bg-black dark:border-zinc-300/40 dark:placeholder:text-zinc-600 dark:text-sky-400 dark:focus:ring-1 dark:focus:ring-sky-400 dark:focus:ring-offset-1
-            "
+              className="border border-zinc-300 py-1.5 px-4 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:bg-black dark:border-zinc-300/40 dark:placeholder:text-zinc-600 dark:text-sky-400 dark:focus:ring-1 dark:focus:ring-sky-400 dark:focus:ring-offset-1"
             />
           </div>
           <div className="flex flex-col gap-2 w-full">
