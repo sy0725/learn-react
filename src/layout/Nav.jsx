@@ -1,14 +1,17 @@
-import { useAuth } from '@/contexts/Auth';
-import { node, string } from 'prop-types';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from "@/contexts/Auth";
+import { useSideMenuStore } from "@/store/sideMenu";
+import { node, string } from "prop-types";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Nav() {
   const { isAuth, signOut } = useAuth();
   const navigate = useNavigate();
 
+  const toggleSideMenu = useSideMenuStore((state) => state.toggleSideMenu);
+
   const handleSignOut = async () => {
     await signOut();
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -26,6 +29,11 @@ function Nav() {
         )}
         <li>
           <Link href="/products">Products</Link>
+        </li>
+        <li>
+          <button type="button" className="uppercase" onClick={toggleSideMenu}>
+            Toggler
+          </button>
         </li>
         {isAuth && (
           <button
@@ -48,7 +56,7 @@ function Link({ href, children }) {
     <NavLink
       to={href}
       className={({ isActive }) => {
-        const baseClassName = 'font-suit font-normal uppercase';
+        const baseClassName = "font-suit font-normal uppercase";
         return isActive
           ? `${baseClassName} text-sky-400 cursor-default`
           : `${baseClassName} text-zinc-400 hover:text-slate-50`;

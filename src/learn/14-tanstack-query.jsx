@@ -3,7 +3,7 @@ import { numberWithComma } from "@/utils";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-function TanstackQueryLibrary() {
+function TanStackQueryLibrary() {
   const [isLoading, setIsLoading] = useState(null);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -31,7 +31,11 @@ function TanstackQueryLibrary() {
   const isError = !!error;
 
   if (isLoading) {
-    return <Spinner size={160} />;
+    return (
+      <div className="grid place-content-center h-full">
+        <Spinner size={160} />
+      </div>
+    );
   }
 
   if (isError) {
@@ -39,7 +43,7 @@ function TanstackQueryLibrary() {
   }
 
   return (
-    <>
+    <div className="container mx-auto">
       <Helmet>
         <title>@tanstack/query - Learn</title>
       </Helmet>
@@ -65,8 +69,8 @@ function TanstackQueryLibrary() {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }
 
-export default TanstackQueryLibrary;
+export default TanStackQueryLibrary;
